@@ -8,7 +8,9 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.resource('tasks');
-  this.route('tasks', function() {});
+  this.route('tasks', function() {
+    this.route('show', { path: '/:task_id'});
+  });
 });
 
 export default Router;
