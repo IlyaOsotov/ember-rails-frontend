@@ -1,6 +1,6 @@
 <ul>
     {{#each model as |task|}}
-    <li> {{task.name}} </li>
+        {{task-item task=task}}
     {{/each}}
 </ul>
 {{outlet}}
