@@ -1,10 +1,10 @@
-<button {{action 'newTask'}}>Добавить позицию</button>
+<button class="add-button" {{action 'newTask'}}>Добавить позицию</button>
 
-<ul>
+<div class="list">
     {{#each taskList as |task|}}
-        {{task-item task=task}}
+        {{task-item class="item" task=task}}
     {{/each}}
-</ul>
+</div>
 
 {{#if isShowingModal}}
   {{#modal-dialog close="close" clickOutsideToClose=true}}

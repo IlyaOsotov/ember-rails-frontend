@@ -10,7 +10,6 @@ export default Component.extend({
                 task.destroyRecord();
             });
         },
-
         updateTask() {
             let store = this.get('store');
             let name = this.get('task.name');
@@ -23,7 +22,6 @@ export default Component.extend({
             });
             this.set('isShowingModal', false);
         },
-
         showModal() {
             this.set('isShowingModal', true);
         },

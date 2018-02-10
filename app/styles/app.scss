@@ -1,6 +1,52 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
+.list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.modal {
+    text-align: center; 
+}
+.task-time {
+    float: left;
+}
+.item {
+    text-align: center;
+    background-color: beige;
+    margin: 5px;
+    width: 400px;
+    position: relative;
+    border-radius: 5px;
+}
 p, button {
-    display: inline-block
+    display: inline-block;
+}
+.inline {
+    display: inline-block;
+}
+.remove-button {
+    background-color: beige;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    top: 25%;
+    position: absolute;
+    right: 0;
+}
+.task-text {
+    margin: 5px 0 5px 0;
+}
+.title {
+    text-align: center;
+}
+.add-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

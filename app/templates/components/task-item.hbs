@@ -1,6 +1,6 @@
-<p>{{task.time}}</p>
-<h1 onclick={{action "showModal"}}> {{task.name}} </h1>
-<button {{action 'removeTask' task.id}}>x</button>
+<p class="inline task-time">{{task.formattedTime}}</p>
+<h1 class="inline task-text" onclick={{action "showModal"}}> {{task.name}} </h1>
+<button class="inline remove-button" {{action 'removeTask' task.id}}>x</button>
 
 {{#if isShowingModal}}
   {{#modal-dialog close="close" clickOutsideToClose=true}}
