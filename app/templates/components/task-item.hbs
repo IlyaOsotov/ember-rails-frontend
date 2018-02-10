@@ -1,3 +1,25 @@
 <p>{{task.time}}</p>
-<h1> {{task.name}} </h1>
+<h1 onclick={{action "showModal"}}> {{task.name}} </h1>
 <button {{action 'removeTask' task.id}}>x</button>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close="close" clickOutsideToClose=true}}
+
+    <div class="modal">
+      <h3>Изменение пункта</h3>
+      <label>Название</label>
+      {{input value=(mut task.name)}}
+      <label>Время</label>
+      {{input value=(mut task.time)}}
+      <input type="hidden" value={{task.id}}>
+      <p>
+        <button {{action "updateTask"}}>OK</button>
+      </p>
+      <p>
+        <button {{action "cancel"}}>Cancel</button>
+      </p>
+
+    </div>
+
+  {{/modal-dialog}}
+{{/if}}
