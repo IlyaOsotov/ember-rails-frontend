@@ -1,7 +1,29 @@
-<button {{action 'createTask'}}>Create task</button>
+<button {{action 'newTask'}}>Добавить позицию</button>
 
 <ul>
     {{#each taskList as |task|}}
         {{task-item task=task}}
     {{/each}}
 </ul>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close="close" clickOutsideToClose=true}}
+
+    <div class="modal">
+      <h3>Добавление нового пункта</h3>
+      <label>Название</label>
+      {{input value=taskName}}
+      <label>Время</label>
+      {{input value=taskTime}}
+
+      <p>
+        <button {{action "createTask"}}>OK</button>
+      </p>
+      <p>
+        <button {{action "cancel"}}>Cancel</button>
+      </p>
+
+    </div>
+
+  {{/modal-dialog}}
+{{/if}}
