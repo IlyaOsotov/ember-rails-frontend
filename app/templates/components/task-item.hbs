@@ -1,4 +1,4 @@
-<p class="inline task-time">{{moment-format task.time 'HH:mm'}}</p>
+<p class="inline task-time" onclick={{action "showTimePicker"}}>{{moment-format task.time 'HH:mm'}}</p>
 <h1 class="inline task-text" onclick={{action "showModal"}}> {{task.name}} </h1>
 <button class="inline remove-button" {{action 'removeTask' task.id}}>x</button>
 
@@ -9,13 +9,6 @@
       <h3>Изменение пункта</h3>
       <label>Название</label>
       {{input value=(mut task.name)}}
-      <label>Время</label>
-      {{input-time 
-        displayFormat="HH:mm"
-        format="object"
-        timeInterval=10
-        pickerDisplayFormat="HH:mm"
-        value=task.time}}
       <input type="hidden" value={{task.id}}>
       <p>
         <button {{action "updateTask"}}>OK</button>
@@ -27,4 +20,14 @@
     </div>
 
   {{/modal-dialog}}
+{{/if}}
+
+{{#if isShowingTimePicker}}
+  {{time-picker
+    select="selectTime"
+    selectedTime=task.time 
+    displayFormat="HH:mm"
+    output="date"
+    timeInterval=10
+    close="closeTimePicker"}}
 {{/if}}

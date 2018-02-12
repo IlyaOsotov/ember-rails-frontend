@@ -13,15 +13,27 @@ export default Component.extend({
         updateTask() {
             let store = this.get('store');
             let name = this.get('task.name');
-            let time = this.get('task.time');
-            let date = new Date(time.year, time.month, time.date, time.hour, time.minute);
             let id = this.get('task.id');
             store.findRecord('task', id).then(function(task) {
                 task.set('name', name);
-                task.set('time', date);
                 task.save();
             });
             this.set('isShowingModal', false);
+        },
+        selectTime(time) {
+            let store = this.get('store');
+            let date = new Date(time);
+            let id = this.get('task.id');
+            store.findRecord('task', id).then(function(task) {
+                task.set('time', date);
+                task.save();
+            });
+        },
+        closeTimePicker() {
+            this.set('isShowingTimePicker', false);
+        },
+        showTimePicker() {
+            this.set('isShowingTimePicker', true);
         },
         showModal() {
             this.set('isShowingModal', true);
