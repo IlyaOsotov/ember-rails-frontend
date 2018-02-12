@@ -10,7 +10,12 @@
       <label>Название</label>
       {{input value=(mut task.name)}}
       <label>Время</label>
-      {{input value=(mut task.time)}}
+      {{input-time 
+        displayFormat="HH:mm"
+        format="object"
+        timeInterval=10
+        pickerDisplayFormat="HH:mm"
+        value=task.time}}
       <input type="hidden" value={{task.id}}>
       <p>
         <button {{action "updateTask"}}>OK</button>

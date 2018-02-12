@@ -10,7 +10,9 @@ export default Component.extend({
         createTask() {
             let store = this.get('store');
             let name = this.get('taskName');
-            let task = store.createRecord('task', { name: name });
+            let time = this.get('taskTime');
+            let date = new Date(time.year, time.month, time.date, time.hour, time.minute);
+            let task = store.createRecord('task', { name: name, time: date });
             task.save();
             this.set('isShowingModal', false);
         },

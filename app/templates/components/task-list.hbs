@@ -14,8 +14,12 @@
       <label>Название</label>
       {{input value=taskName}}
       <label>Время</label>
-      {{input value=taskTime}}
-
+      {{input-time 
+        displayFormat="HH:mm"
+        format="object"
+        timeInterval=10
+        pickerDisplayFormat="HH:mm"
+        value=taskTime}}
       <p>
         <button {{action "createTask"}}>OK</button>
       </p>
