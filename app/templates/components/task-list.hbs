@@ -1,7 +1,7 @@
 <button class="add-button" {{action 'newTask'}}>Добавить позицию</button>
 
 <div class="list">
-    {{#each taskList as |task|}}
+    {{#each sortedTasks as |task|}}
         {{task-item class="item" task=task}}
     {{/each}}
 </div>

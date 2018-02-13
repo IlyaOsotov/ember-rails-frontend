@@ -1,7 +1,10 @@
 import Component from '@ember/component';
+import { sort } from '@ember/object/computed';
 
 export default Component.extend({
     store: Ember.inject.service(),
+    sortedTasks: sort('taskList', 'sortDefinition'),
+    sortDefinition: ['time'],
 
     actions: {
         newTask() {
