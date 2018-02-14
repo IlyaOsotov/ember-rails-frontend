@@ -1,3 +1,4 @@
+{{input type="checkbox" checked=task.isChecked}}
 <p class="inline task-time" onclick={{action "showTimePicker"}}>{{moment-format task.time 'HH:mm'}}</p>
 <h1 class="inline task-text" onclick={{action "showModal"}}> {{task.name}} </h1>
 <button class="inline remove-button" {{action 'removeTask' task.id}}>x</button>

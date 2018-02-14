@@ -24,10 +24,18 @@ export default Component.extend({
             let store = this.get('store');
             let date = new Date(time);
             let id = this.get('task.id');
-            store.findRecord('task', id).then(function(task) {
-                task.set('time', date);
-                task.save();
-            });
+            let isChecked = this.get('task.isChecked');
+            if(isChecked) {
+                store.findAll('task').then(function(scope) {
+                    scope.filterBy('isChecked',true).setEach('time', date);
+                    scope.save();
+                })
+            } else {
+                store.findRecord('task', id).then(function(task) {
+                    task.set('time', date);
+                    task.save();
+                });
+            }
         },
         closeTimePicker() {
             this.set('isShowingTimePicker', false);
