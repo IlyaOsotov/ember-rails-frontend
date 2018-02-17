@@ -11,20 +11,24 @@
 
     <div class="modal">
       <h3>Добавление нового пункта</h3>
-      <label>Название</label>
-      {{input value=taskName}}
-      <label>Время</label>
-      {{input-time 
-        displayFormat="HH:mm"
-        format="object"
-        timeInterval=10
-        pickerDisplayFormat="HH:mm"
-        value=taskTime}}
+      <div>
+        <label>Название</label>
+        {{input value=taskName}}
+      </div>
+      <div>
+        <label>Время</label>
+        {{input-time 
+          displayFormat="HH:mm"
+          format="object"
+          timeInterval=10
+          pickerDisplayFormat="HH:mm"
+          value=taskTime}}
+      </div>
       <p>
-        <button {{action "createTask"}}>OK</button>
+        <button class="add-button" {{action "createTask"}}>OK</button>
       </p>
       <p>
-        <button {{action "cancel"}}>Cancel</button>
+        <button class="add-button" {{action "cancel"}}>Cancel</button>
       </p>
 
     </div>

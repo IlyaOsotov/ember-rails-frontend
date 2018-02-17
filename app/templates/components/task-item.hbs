@@ -1,4 +1,4 @@
-{{input type="checkbox" checked=task.isChecked}}
+{{input class="task-checked" type="checkbox" checked=task.isChecked}}
 <p class="inline task-time" onclick={{action "showTimePicker"}}>{{moment-format task.time 'HH:mm'}}</p>
 <h1 class="inline task-text" onclick={{action "showModal"}}> {{task.name}} </h1>
 <button class="inline remove-button" {{action 'removeTask' task.id}}>x</button>
@@ -12,10 +12,10 @@
       {{input value=(mut task.name)}}
       <input type="hidden" value={{task.id}}>
       <p>
-        <button {{action "updateTask"}}>OK</button>
+        <button class="add-button" {{action "updateTask"}}>OK</button>
       </p>
       <p>
-        <button {{action "cancel"}}>Cancel</button>
+        <button class="add-button" {{action "cancel"}}>Cancel</button>
       </p>
 
     </div>
