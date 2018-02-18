@@ -22,6 +22,7 @@ body {
 }
 .task-time {
     float: left;
+    cursor: pointer;
 }
 .item {
     text-align: center;
@@ -37,6 +38,7 @@ body {
     position: absolute;
     left: -20px;
     top: 30%;
+    cursor: pointer;
 }
 p, button {
     display: inline-block;
@@ -53,9 +55,11 @@ p, button {
     top: 25%;
     position: absolute;
     right: 0;
+    cursor: pointer;
 }
 .task-text {
     margin: 5px 0 5px 0;
+    cursor: pointer;
 }
 .title {
     text-align: center;
